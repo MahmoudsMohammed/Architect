@@ -212,6 +212,26 @@ a {
       & {
         right: 33rem;
       }
+      &:hover::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -1rem;
+        border: 10px solid transparent;
+        border-right-color: var(--main-color);
+      }
+      &:hover::before {
+        content: 'Close';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 130%;
+        background-color: var(--main-color);
+        color: var(--text-color);
+        font-size: 1.5rem;
+        padding: 1rem 3rem;
+      }
       span {
         background-color: black;
       }
