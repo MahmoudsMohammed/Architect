@@ -132,6 +132,55 @@ a {
         background-color: var(--text-color);
       }
     }
+    .links {
+      & {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        height: 100vh;
+        width: 40rem;
+        background-color: var(--text-color);
+      }
+      ul {
+        & {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        li {
+          & {
+            text-align: center;
+            margin: 3rem;
+          }
+          a {
+            position: relative;
+            font-family: 'Baloo Da 2', serif;
+            font-size: 4rem;
+            white-space: nowrap;
+            color: var(--sec-color);
+          }
+          a::after {
+            content: attr(data);
+            position: absolute;
+            color: var(--main-color);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 0;
+            overflow: hidden;
+            transition: width 0.3s;
+          }
+          a:hover::after {
+            width: 100%;
+          }
+        }
+      }
+      .social {
+        position: absolute;
+        bottom: 4rem;
+      }
+    }
   }
   // end menu
 }
