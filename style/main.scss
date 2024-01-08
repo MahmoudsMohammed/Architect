@@ -26,6 +26,8 @@ a {
   & {
     position: relative;
     height: 100vh;
+    overflow: hidden;
+    perspective: 1000rem;
   }
   // start image
   .image {
@@ -33,6 +35,8 @@ a {
       height: 100%;
       width: 100%;
       position: relative;
+      overflow: hidden;
+      animation: scale 20s forwards;
     }
     &::after {
       content: '';
@@ -47,6 +51,14 @@ a {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    @keyframes scale {
+      0% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
   }
   // end image
@@ -66,6 +78,8 @@ a {
       font-weight: 300;
       text-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.4);
       margin-bottom: 2rem;
+      opacity: 0;
+      animation: rotate 2s ease-in-out forwards;
     }
     p {
       font-family: 'Josefin Slab', serif;
@@ -74,6 +88,9 @@ a {
       margin: 0 {
         bottom: 2rem;
       }
+      text-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.4);
+      opacity: 0;
+      animation: rotate 2s 0.5s ease-in-out forwards;
     }
     button {
       padding: 2rem 4rem;
@@ -82,6 +99,19 @@ a {
       border: none;
       font-size: 2rem;
       text-transform: uppercase;
+      box-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.5);
+      text-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.4);
+      opacity: 0;
+      animation: rotate 2s 0.9s ease-in-out forwards;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotateY(90deg) translateY(200rem);
+      }
+      100% {
+        opacity: 1;
+        transform: rotateY(0);
+      }
     }
   }
   // end content
