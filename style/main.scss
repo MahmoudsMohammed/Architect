@@ -18,6 +18,7 @@ a {
   --main-color: #c29525;
   --sec-color: #4b4b4b;
   --text-color: #fff;
+  --duration: 0.3s;
 }
 // end main rules
 
@@ -27,7 +28,6 @@ a {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    perspective: 1000rem;
   }
   // start image
   .image {
@@ -65,6 +65,7 @@ a {
   // start content
   .content {
     & {
+      perspective: 1000rem;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -99,7 +100,7 @@ a {
       border: none;
       font-size: 2rem;
       text-transform: uppercase;
-      box-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.5);
+      box-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.3);
       text-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.4);
       opacity: 0;
       animation: rotate 2s 0.9s ease-in-out forwards;
@@ -125,6 +126,8 @@ a {
         position: fixed;
         top: 4rem;
         right: 4rem;
+        z-index: 20;
+        transition: var(--duration) + 0.1s ease-in-out;
       }
       span {
         width: 100%;
@@ -136,16 +139,17 @@ a {
       & {
         position: fixed;
         top: 0px;
-        right: 0px;
+        right: -40rem;
         height: 100vh;
         width: 40rem;
         background-color: var(--text-color);
+        transition: var(--duration) ease-in-out;
       }
       ul {
         & {
           position: absolute;
           top: 50%;
-          left: 50%;
+          left: 45%;
           transform: translate(-50%, -50%);
         }
         li {
@@ -169,7 +173,7 @@ a {
             transform: translateY(-50%);
             width: 0;
             overflow: hidden;
-            transition: width 0.3s;
+            transition: width var(--duration);
           }
           a:hover::after {
             width: 100%;
@@ -177,8 +181,48 @@ a {
         }
       }
       .social {
-        position: absolute;
-        bottom: 4rem;
+        & {
+          position: absolute;
+          bottom: 4rem;
+          @include flex(row, space-evenly, center);
+          width: 100%;
+        }
+        a {
+          & {
+            background-color: #777777;
+            display: block;
+            padding: 1.5rem;
+            border-radius: 50%;
+            transition: background-color var(--duration);
+          }
+          &:hover {
+            background-color: var(--main-color);
+          }
+          i {
+            font-size: 1.5rem;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+    &.display .links {
+      right: 0;
+    }
+    &.display .icon {
+      & {
+        right: 33rem;
+      }
+      span {
+        background-color: black;
+      }
+      span:nth-of-type(1) {
+        transform: rotate(40deg) translate(2px, 5px);
+      }
+      span:nth-of-type(2) {
+        display: none;
+      }
+      span:nth-of-type(3) {
+        transform: rotate(-40deg) translate(2px, -5px);
       }
     }
   }
