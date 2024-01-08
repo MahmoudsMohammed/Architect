@@ -17,6 +17,7 @@ a {
 :root {
   --main-color: #c29525;
   --sec-color: #4b4b4b;
+  --text-color: #fff;
 }
 // end main rules
 
@@ -24,11 +25,12 @@ a {
 .landing {
   & {
     position: relative;
+    height: 100vh;
   }
   // start image
   .image {
     & {
-      height: 100vh;
+      height: 100%;
       width: 100%;
       position: relative;
     }
@@ -44,10 +46,44 @@ a {
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
   // end image
   // start content
-  // end content 
+  .content {
+    & {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20rem;
+      width: 40%;
+    }
+    h1 {
+      font-family: 'Baloo Da 2', serif;
+      color: var(--text-color);
+      font-size: 8rem;
+      font-weight: 300;
+      text-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.4);
+      margin-bottom: 2rem;
+    }
+    p {
+      font-family: 'Josefin Slab', serif;
+      color: var(--text-color);
+      font-size: 3rem;
+      margin: 0 {
+        bottom: 2rem;
+      }
+    }
+    button {
+      padding: 2rem 4rem;
+      background-color: var(--main-color);
+      color: var(--text-color);
+      border: none;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+  }
+  // end content
 }
 // end landing
