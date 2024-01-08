@@ -115,5 +115,24 @@ a {
     }
   }
   // end content
+  // start menu
+  .menu {
+    .icon {
+      & {
+        width: 3rem;
+        height: 3rem;
+        @include flex(column, space-evenly, flex-start);
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+      }
+      span {
+        width: 100%;
+        height: 0.2rem;
+        background-color: var(--text-color);
+      }
+    }
+  }
+  // end menu
 }
 // end landing
