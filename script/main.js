@@ -1,7 +1,5 @@
 "use strict";
-
-var icon = document.querySelector('.icon'),
-  links = document.querySelector('.menu');
-icon.addEventListener('click', function () {
-  links.classList.toggle('display');
+const icon = document.querySelector('.icon'), links = document.querySelector('.menu');
+icon.addEventListener('click', () => {
+    links.classList.toggle('display');
 });
