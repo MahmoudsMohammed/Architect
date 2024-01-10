@@ -329,3 +329,100 @@ a {
   }
 }
 // end about
+
+// Start Team
+.team {
+  & {
+    padding: var(--section-padding) 0px;
+  }
+  .container {
+    & {
+      margin-top: 10rem;
+    }
+    .members {
+      & {
+        display: flex;
+        padding: 5rem;
+        gap: 2rem;
+        overflow-y: scroll;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .member {
+        & {
+          border-radius: 0.5rem;
+          width: 35rem;
+          height: 45rem;
+          flex: none;
+          position: relative;
+        }
+        .image {
+          & {
+            width: 100%;
+            height: 100%;
+            position: relative;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            border-radius: 0.5rem;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+          }
+        }
+        div:not(.image) {
+          & {
+            position: absolute;
+            padding: 0.5rem;
+            bottom: 2rem;
+            left: 1rem;
+            width: 100%;
+          }
+          p:first-of-type {
+            text-shadow: 0 0.3rem 0.5rem rgba($color: #000000, $alpha: 0.4);
+            font-family: 'Baloo Da 2', serif;
+            font-size: 2rem;
+            color: #fff;
+            margin: 0 {
+              bottom: 0.5rem;
+            }
+          }
+          span {
+            text-shadow: 0 0.3rem 0.5rem rgba($color: #000000, $alpha: 0.4);
+            font-family: 'Muli', serif;
+            color: #a52a2a;
+            font-size: 1.8rem;
+            font-weight: 800;
+          }
+          p:last-of-type {
+            margin: 1rem 0;
+            font-family: 'Baloo da 2', serif;
+            color: #fff;
+            font-size: 1.4rem;
+            text-shadow: 0 0.3rem 0.5rem rgba($color: #000000, $alpha: 0.4);
+            width: 70%;
+          }
+          button {
+            font-family: 'Baloo Da 2', serif;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            background-color: var(--main-color);
+            color: #fff;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+// End Team
