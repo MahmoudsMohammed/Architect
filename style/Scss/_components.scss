@@ -1,4 +1,4 @@
-.container{
+.container {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -22,4 +22,24 @@
   .container {
     width: 1170px;
   }
+}
+
+// header Component
+.header {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  font-family: 'Muli', serif;
+  font-size: 5rem;
+  font-weight: 300;
+  color: #4b4b4b;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 0.3rem;
+  bottom: -3rem;
+  left: 20%;
+  background-color: #c29525;
 }
