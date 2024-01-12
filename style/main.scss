@@ -763,6 +763,23 @@ a {
   position: relative;
   width: 80px;
   height: 80px;
+  opacity: 0;
+  visibility: hidden;
+  animation: spinnerDisplay 4s;
+}
+@keyframes spinnerDisplay {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .spinner div {
   animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
