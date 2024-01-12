@@ -564,3 +564,38 @@ a {
   }
 }
 // End Contact
+
+// Start Footer
+.footer {
+  & {
+    background-color: #17181b;
+    padding: var(--section-padding) 0px;
+  }
+  .content {
+    & {
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+    }
+    p {
+      font-family: 'Baloo Da 2', serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      margin: 0;
+      color: #a7a7a7;
+    }
+    .social {
+      & {
+        display: flex;
+        gap: 3rem;
+      }
+      i {
+        color: #a7a7a7;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+// End Footer
