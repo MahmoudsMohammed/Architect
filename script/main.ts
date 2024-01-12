@@ -11,11 +11,11 @@ icon.addEventListener('click', () => {
 
 // Handle Arrows to slide the team members
 right.addEventListener('click', (e) => {
-  members.scrollLeft += 370;
+  members.scrollLeft += 320;
   members.style.scrollBehavior = 'smooth';
 });
 
 left.addEventListener('click', (e) => {
-  members.scrollLeft -= 370;
+  members.scrollLeft -= 320;
   members.style.scrollBehavior = 'smooth';
 });
