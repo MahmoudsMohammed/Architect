@@ -22,6 +22,7 @@ a {
   --duration: 0.5s;
   --section-padding: 6rem;
   --about-color: #4b4b4b;
+  --dark-color: #272727;
 }
 // end main rules
 
@@ -455,3 +456,111 @@ a {
   }
 }
 // End Team
+
+// Start Contact
+.contact {
+  & {
+    padding: var(--section-padding) 0px;
+    background-color: var(--dark-color);
+    height: 100vh;
+  }
+  .main {
+    & {
+      width: 60%;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      box-shadow: 0.2rem 0.4rem 0.8rem rgba($color: #000000, $alpha: 0.4),
+        -0.2rem -0.4rem 0.8rem rgba($color: #000000, $alpha: 0.4);
+    }
+    .image {
+      width: 35%;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+        url('../static/contact.jpg');
+      background-size: cover;
+    }
+    .form {
+      & {
+        flex: 1;
+        height: 100%;
+        background-color: #eeeeee;
+        position: relative;
+      }
+      h3 {
+        font-family: 'Baloo Da 2', serif;
+        width: fit-content;
+        color: var(--dark-color);
+        font-size: 5rem;
+        font-weight: 300;
+        margin: 5rem auto;
+      }
+      form {
+        & {
+          display: flex;
+          flex-direction: column;
+          padding: 0px 3rem;
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .input-group {
+          & {
+            position: relative;
+          }
+          input:not([type='submit']),
+          textarea {
+            & {
+              width: 100%;
+              height: 3rem;
+              background-color: transparent;
+              border: none;
+              border-bottom: 2px dashed var(--dark-color);
+              margin-bottom: 5rem;
+              font-size: 2rem;
+              padding: 0.5rem 0px;
+              color: var(--dark-color);
+            }
+            &:focus {
+              border-bottom-style: solid;
+            }
+            &:focus ~ label {
+              top: -2rem;
+            }
+          }
+          textarea {
+            resize: none;
+            height: auto;
+            padding: 0;
+          }
+          label {
+            font-family: 'Baloo Da 2', serif;
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            text-transform: capitalize;
+            transition: var(--duration);
+          }
+        }
+        [type='submit'] {
+          font-family: 'Muli', serif;
+          border: none;
+          padding: 2rem;
+          background-color: var(--main-color);
+          color: #fff;
+          font-size: 1.5rem;
+          font-weight: 300;
+          text-transform: uppercase;
+          letter-spacing: 0.3rem;
+          box-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.3);
+          text-shadow: 0 0.2rem 0.3rem rgba($color: #000000, $alpha: 0.4);
+        }
+      }
+    }
+  }
+}
+// End Contact
